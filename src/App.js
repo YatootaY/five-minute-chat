@@ -9,11 +9,13 @@ const App = () => {
     const [meetingToken,setMeetingToken] = useState();
 
     useEffect( () => {
-        setMeetingToken(randomstring.generate(16))
+        setMeetingToken(randomstring.generate(16));
     },[])
 
-    const loginUser = () => {
+    const loginUser = (newToken) => {
         setUserLogin(true);
+        setMeetingToken(newToken);
+        console.log(meetingToken);
     }
 
     return(
