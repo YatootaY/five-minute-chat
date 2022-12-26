@@ -22,8 +22,10 @@ const App = () => {
     }
 
     const countDown = useCallback(() => {
-            changeTime((oldTime) => oldTime-1)
-        },[])
+            if (userLogin == true){
+                changeTime((oldTime) => oldTime-1)
+            }
+        },[userLogin])
 
     useEffect(() => {
         const el = document.getElementById("counter");
