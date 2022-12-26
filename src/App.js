@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useCallback,useState,useEffect} from "react";
 import randomstring from 'randomstring';
 import Chat from "./components/Chat.js";
 import Login from "./components/Login.js";
@@ -7,15 +7,41 @@ const App = () => {
     
     const [userLogin, setUserLogin] = useState(false);
     const [meetingToken,setMeetingToken] = useState();
+    const [time,changeTime] = useState(300);
 
-    useEffect( () => {
+    const convertSecondToMinute = (sec) => {
+        let minute = Math.floor(sec/60);
+        let second = Math.floor(sec%60);
+        minute = "0" + String(minute);
+        if (second < 10){
+            second = '0' + String(second)
+        }else{
+            second = String(second)
+        }
+        return(minute + ":" + second)
+    }
+
+    const countDown = useCallback(() => {
+            changeTime((oldTime) => oldTime-1)
+        },[])
+
+    useEffect(() => {
+        const el = document.getElementById("counter");
+        el.textContent = convertSecondToMinute(time);
+        if(time <= 0){
+          return
+        }
+        const timeoutFunction = setInterval(countDown, 1000)
+        return () => clearInterval(timeoutFunction);
+      },[countDown, time])
+    
+    useEffect(() => {
         setMeetingToken(randomstring.generate(16));
-    },[])
+    }, []);
 
     const loginUser = (newToken) => {
         setUserLogin(true);
         setMeetingToken(newToken);
-        console.log(meetingToken);
     }
 
     return(
