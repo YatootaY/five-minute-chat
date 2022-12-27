@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/five-minute-chat/static/css/main.62f3acbd.css",
+    "main.js": "/five-minute-chat/static/js/main.922f34db.js",
+    "index.html": "/five-minute-chat/index.html",
+    "main.62f3acbd.css.map": "/five-minute-chat/static/css/main.62f3acbd.css.map",
+    "main.922f34db.js.map": "/five-minute-chat/static/js/main.922f34db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62f3acbd.css",
+    "static/js/main.922f34db.js"
+  ]
+}
