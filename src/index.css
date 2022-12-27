@@ -17,3 +17,8 @@
     border: 3px solid var(--primary);
     height: 10px;
   }
+
+.mainGrid{
+  display: grid;
+  grid-template-rows: 2fr 10fr 1fr;
+}

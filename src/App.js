@@ -22,7 +22,7 @@ const App = () => {
     }
 
     const countDown = useCallback(() => {
-            if (userLogin == true){
+            if (userLogin === true){
                 changeTime((oldTime) => oldTime-1)
             }
         },[userLogin])
