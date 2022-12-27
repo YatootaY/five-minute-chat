@@ -5,9 +5,24 @@ import Login from "./components/Login.js";
 
 const App = () => {
     
+    const [userInfo,setUserInfo] = useState();
     const [userLogin, setUserLogin] = useState(false);
     const [meetingToken,setMeetingToken] = useState();
     const [time,changeTime] = useState(300);
+
+    const userSamples = [
+        ["😇","Angel Angel"],
+        ["😎","Cool Cool"],
+        ["👀","Look Look"],
+        ["🤯","Oops Oops"],
+        ["🤐","Zip Zip"],
+        ["😼","Meow Meow"]
+    ]
+
+    const generateUserInfo = () => {
+        const info = userSamples[Math.floor(Math.random()*userSamples.length)];
+        setUserInfo(info);
+    }
 
     const convertSecondToMinute = (sec) => {
         let minute = Math.floor(sec/60);
@@ -39,6 +54,8 @@ const App = () => {
     
     useEffect(() => {
         setMeetingToken(randomstring.generate(16));
+        generateUserInfo();
+        console.log(userInfo)
     }, []);
 
     const loginUser = (newToken) => {
@@ -52,7 +69,7 @@ const App = () => {
             {(() => {
                 if(userLogin === true){
                     return (
-                        <Chat meetingToken={meetingToken}/>
+                        <Chat meetingToken={meetingToken} userInfo={userInfo} time={convertSecondToMinute(time)}/>
                     )
                 }else{
                     return(
