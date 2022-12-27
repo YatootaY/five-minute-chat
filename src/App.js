@@ -42,8 +42,8 @@ const App = () => {
     }, []);
 
     const loginUser = (newToken) => {
-        setUserLogin(true);
         setMeetingToken(newToken);
+        setUserLogin(true);
     }
 
     return(
@@ -51,7 +51,7 @@ const App = () => {
             {(() => {
                 if(userLogin === true){
                     return (
-                        <Chat/>
+                        <Chat meetingToken={meetingToken}/>
                     )
                 }else{
                     return(

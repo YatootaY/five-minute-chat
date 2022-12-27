@@ -20,5 +20,6 @@
 
 .mainGrid{
   display: grid;
-  grid-template-rows: 2fr 10fr 1fr;
+  grid-template-rows: min-content 1fr min-content;
+  height: 100%;
 }
