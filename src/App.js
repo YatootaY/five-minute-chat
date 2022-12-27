@@ -8,15 +8,15 @@ const App = () => {
     const [userInfo,setUserInfo] = useState();
     const [userLogin, setUserLogin] = useState(false);
     const [meetingToken,setMeetingToken] = useState();
-    const [time,changeTime] = useState(300);
+    const [time,changeTime] = useState(100);
 
     const userSamples = [
-        ["😇","Angel Angel"],
-        ["😎","Cool Cool"],
-        ["👀","Look Look"],
-        ["🤯","Oops Oops"],
-        ["🤐","Zip Zip"],
-        ["😼","Meow Meow"]
+        ["😇","Angel"],
+        ["😎","Cool"],
+        ["👀","Look"],
+        ["🤯","Oops"],
+        ["🤐","Zip"],
+        ["😼","Meow"]
     ]
 
     const generateUserInfo = () => {
