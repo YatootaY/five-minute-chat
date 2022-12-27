@@ -11,12 +11,25 @@ const App = () => {
     const [time,changeTime] = useState(10);
 
     const userSamples = [
-        ["😇","Angel"],
-        ["😎","Cool"],
-        ["👀","Look"],
-        ["🤯","Oops"],
+        ["🌻","Sunflower"],
+        ["🍀","Lucky"],
+        ["🐼","Panda"],
+        ["🌸","Cherry"],
         ["🤐","Zip"],
-        ["😼","Meow"]
+        ["😼","Meow"],
+        ["🍙","Sushi"],
+        ["🍔","Burger"],
+        ["🐒","Monkey"],
+        ["🔥","Lit"],
+        ["🐮","Cow"],
+        ["🍺","Beer"],
+        ["🥐","Croissant"],
+        ["🚀","Rocket"],
+        ["🍁","Maple"],
+        ["🌹","Rose"],
+        ["🌚","Moon"],
+        ["🌝","Sunny"]
+        
     ]
 
     const generateUserInfo = () => {
