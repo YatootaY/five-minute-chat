@@ -8,7 +8,7 @@ const App = () => {
     const [userInfo,setUserInfo] = useState();
     const [userLogin, setUserLogin] = useState(false);
     const [meetingToken,setMeetingToken] = useState();
-    const [time,changeTime] = useState(10);
+    const [time,changeTime] = useState(300);
 
     const userSamples = [
         ["🌻","Sunflower"],
