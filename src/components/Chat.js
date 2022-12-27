@@ -75,7 +75,7 @@ const Chat = ({meetingToken,userInfo,time}) => {
 
     return(
         <div className="flex flex-col h-full">
-            <Messages message={message}/>
+            <Messages message={message} time={time}/>
             
             <form className="flex gap-3 md:px-40 px-20 mr-2" onSubmit={handleSaveText}>
                 <input ref={messageRef} id="msg" className="text-xs focus:outline-none bg-slate-800 py-2 px-5 flex-grow rounded-md" type="text" placeholder='Enter your message' autoComplete="off"/>

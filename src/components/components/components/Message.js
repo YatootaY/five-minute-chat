@@ -3,7 +3,7 @@ import React from "react";
 const Message = ({msg}) => {
 
     return(
-        <div className=" hover:bg-gray-900 p-2 rounded-lg cursor-default mt-3">
+        <div className=" hover:bg-gray-900 p-2 rounded-lg cursor-default mt-3 transition-colors duration-300">
             <div className="userInfo flex gap-4 ">
                 <div className="userIcon md:text-3xl text-2xl">{msg.data.profile}</div>
                 <div className="space-y-1">
