@@ -8,7 +8,6 @@ import {
   } from 'firebase/firestore';
 
 const Chat = ({meetingToken}) => {
-    console.log(meetingToken)
     const messageRef = useRef()
     const handleSaveText = async (e) => {
         e.preventDefault()
@@ -16,7 +15,7 @@ const Chat = ({meetingToken}) => {
             alert("You cannot sent empty message");
             return ;
         }
-            console.log(meetingToken)
+        try{
             await addDoc(collection(db,meetingToken), {
                 text: messageRef.current.value,
                 created: Timestamp.now()
@@ -25,7 +24,10 @@ const Chat = ({meetingToken}) => {
             input.value = ""
             const chatarea = document.getElementById("chatarea")
             chatarea.scrollTop = chatarea.scrollHeight;
-        
+        }catch{
+            alert("Expected Erro!")
+            return;
+        }
     }
 
     return(

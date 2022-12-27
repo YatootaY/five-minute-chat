@@ -42,6 +42,7 @@ const App = () => {
     }, []);
 
     const loginUser = (newToken) => {
+        console.log(newToken)
         setMeetingToken(newToken);
         setUserLogin(true);
     }
