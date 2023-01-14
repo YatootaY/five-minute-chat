@@ -1,6 +1,6 @@
 # Five Minute Chat Web App
 
-Have you ever wonder 5 minute conversation is enough to get to know with someone? <br>
+Have you ever wondered if a 5-minute conversation is enough to get to know someone? <br>
 
 ## How it works
 
