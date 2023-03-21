@@ -25,17 +25,20 @@ const Chat = ({meetingToken,userInfo,time}) => {
             alert("You cannot sent empty message");
             return ;
         }
+
+        const msg = messageRef.current.value;
+        const input = document.getElementById("msg")
+        input.value = ""
+        const chatarea = document.getElementById("chatarea")
         
             await addDoc(collection(db,meetingToken), {
                 profile: userInfo[0],
                 name: userInfo[1],
-                text: messageRef.current.value,
+                text: msg,
                 time: time,
                 created: Timestamp.now()
             })
-            const input = document.getElementById("msg")
-            input.value = ""
-            const chatarea = document.getElementById("chatarea")
+            
             chatarea.scrollTop = chatarea.scrollHeight;
         
     }
